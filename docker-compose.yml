@@ -26,5 +26,11 @@ services:
       POSTGRES_PASSWORD: prisma
     volumes:
       - postgres:/var/lib/postgresql/data
+  server:
+    build: .
+    environment:
+      APP_SECRET: "xxx"
+    ports:
+    - "4000:4000"
 volumes:
   postgres:

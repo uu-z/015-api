@@ -1,4 +1,4 @@
-FROM node
+FROM node:latest
 
 # set working directory
 RUN mkdir /main
@@ -20,6 +20,7 @@ ADD . .
 # prisma configuration
 RUN prisma deploy
 
+EXPOSE 4000
 # run post deploy hook
 # RUN graphql get-schema --project prisma
 # RUN graphql prepare
